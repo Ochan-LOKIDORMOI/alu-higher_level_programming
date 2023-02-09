@@ -2,6 +2,6 @@
 #3-print_alphabt.py
 
 """print the alphabet in lowercase, not followed by a new line."""
-for letter in range(97, 123)
+for letter in range(97, 123):
     if chr(letter) != 'c' and chr(letter) != 'q':
         print("{:s}".format(chr(letter)), end="")
