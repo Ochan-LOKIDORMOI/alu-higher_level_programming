@@ -1,8 +1,6 @@
 #!/usr/bin/python3
-
-if __name__ == "__main__":
-    """Print the sum of 1 and 2."""
     from add_0 import add
+    if __name__ "__main__1a7094594e4e8be03511"
 
     a = 1
     b = 2
