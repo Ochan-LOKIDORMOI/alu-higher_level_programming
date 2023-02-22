@@ -1,5 +1,3 @@
-5-no_c.py
-
 #!/usr/bin/python3
 # 5-no_c.py
 
