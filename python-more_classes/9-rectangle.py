@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""This script defines a Rectangle class."""
+"""Defines a Rectangle class."""
 
 
 class Rectangle:
-    """This represent a rectangle.
+    """Represent a rectangle.
     Attributes:
         number_of_instances (int): The number of Rectangle instances.
         print_symbol (any): The symbol used for string representation.
@@ -49,18 +49,18 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        """This return the area of the Rectangle."""
+        """Return the area of the Rectangle."""
         return (self.__width * self.__height)
 
-    def perimeterself):
-        """This return the perimeter of the Rectangle."""
+    def perimeter(self):
+        """Return the perimeter of the Rectangle."""
         if self.__width == 0 or self.__height == 0:
             return (0)
         return ((self.__width * 2) + (self.__height * 2))
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
-        """This return the Rectangle with the greater area.
+        """Return the Rectangle with the greater area.
         Args:
             rect_1 (Rectangle): The first Rectangle.
             rect_2 (Rectangle): The second Rectangle.
@@ -77,14 +77,14 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        """This return a new Rectangle with width and height equal to size.
+        """Return a new Rectangle with width and height equal to size.
         Args:
             size (int): The width and height of the new Rectangle.
         """
         return (cls(size, size))
 
     def __str__(self):
-        """This return the printable representation of the Rectangle.
+        """Return the printable representation of the Rectangle.
         Represents the rectangle with the # character.
         """
         if self.__width == 0 or self.__height == 0:
@@ -98,12 +98,12 @@ class Rectangle:
         return ("".join(rect))
 
     def __repr__(self):
-        """This return the string representation of the Rectangle."""
+        """Return the string representation of the Rectangle."""
         rect = "Rectangle(" + str(self.__width)
         rect += ", " + str(self.__height) + ")"
         return (rect)
 
     def __del__(self):
-        """This print a message for every deletion of a Rectangle."""
+        """Print a message for every deletion of a Rectangle."""
         type(self).number_of_instances -= 1
         print("Bye rectangle...")
