@@ -2,6 +2,6 @@
 """Define a class square"""
 
 
-class square:
+def __init__(Square):
     """Represent a class square"""
     pass
