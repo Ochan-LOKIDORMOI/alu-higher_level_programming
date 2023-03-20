@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-type
 
-#This is the function that print the object
+x = 42
+print(type(x))
+
 
