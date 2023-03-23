@@ -1,4 +1,4 @@
-#!/usr/bin/pyhon3
+#!/usr/bin/python3
 """This checks if object is instance of a class that 
 inherited from the specified class or not
 """
