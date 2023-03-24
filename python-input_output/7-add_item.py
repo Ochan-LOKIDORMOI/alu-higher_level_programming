@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines load,save and add"""
+"""Are you docuemnted ?"""
 
 
 import sys
