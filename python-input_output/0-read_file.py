@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-"""Reading a file"""
+"""Reading a file."""
 
 
-def append_write(filename="", text=""):
+def read_file(filename=""):
     """This file can be read"""
-    with open(filename, 'a+') as f:
-        return f.write(text)
+    with open(filename) as f:
+        line = f.read()
+        print(line, end="")
