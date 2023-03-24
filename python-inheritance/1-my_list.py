@@ -1,4 +1,4 @@
-#!/usr/bib/python3
+#!/usr/bin/python3
 """Module inherited from the list class"""
 
 
