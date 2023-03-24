@@ -1,9 +1,12 @@
 #!/usr/bin/python3
-"""This module inherits from the list class"""
+""" Write a class MyList that inherits from list: """
 
 
 class MyList(list):
-    """A class that inherits from list"""
+    """ Sorts lists object """
+
     def print_sorted(self):
-        """prints a sorted list"""
-        print(sorted(self))
+        """ Print sorted list """
+        copy_list = self[:]
+        copy_list.sort()
+        print('{}'.format(copy_list))
