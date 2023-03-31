@@ -1,6 +1,6 @@
 -- Always creating the table name.
 
-CREATE TABLE IF NOT EXISTS forcr_name(
+CREATE TABLE IF NOT EXISTS force_name(
 	id INT,
 	name VARCHAR(256)
 )
