@@ -1,4 +1,4 @@
---Import the database from  Rotten tomatoes.
+-- Rotten tomatoes.
 
 SELECT tv_shows.title, SUM(tv_show_ratings.rate) AS rating
 FROM tv_shows
