@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Interactive tests"""
+"""Doc"""
 
 
 import unittest
@@ -8,24 +8,24 @@ max_integer = __import__('6-max_integer').max_integer
 
 
 class TestMaxInt(unittest.TestCase):
-    """This is Test Cases"""
+    """Test Cases"""
 
     def test_simple_case(self):
-        """Interactive"""
+        """Doc"""
         self.assertEqual(max_integer([1, 2, 3]), 3)
 
     def test_negative_case(self):
-        """Interactive"""
+        """Doc"""
         self.assertEqual(max_integer([-1, -2, -3]), 3)
     
     def test_empty_case(self):
-        """Interactive"""
+        """Doc"""
         self.assertEqual(max_integer([]), None)
 
     def test_max_middle_case(self):
-        """Interactive"""
+        """Doc"""
         self.assertEqual(max_integer([4, 7, 2, 8, 3]), 8)
 
     def test_one_element_case(self):
-        """Interactive"""
+        """Doc"""
         self.assertEqual(max_integer([5]), 5)
