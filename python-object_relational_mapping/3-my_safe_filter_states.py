@@ -22,9 +22,9 @@ if __name__ == '__main__':
                          passwd=password,
                          db=db_name)  
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM
+    cursor.execute="""SELECT * FROM
             states WHERE name=%s
-            ORDER BY id ASC", (state_name,))
+            ORDER BY id ASC""", (state_name,)
 
     states = cursor.fetchall()
     for state in states:
