@@ -5,26 +5,29 @@
      where name matches the argument
 """
 
-import MySQLdb
 import sys
+import MySQLdb
 
 
 if __name__ == '__main__':
-    username = sys.argv[1]
-    password = sys.argv[2]
-    db_name = sys.argv[3]
-    state_name = sys.argv[4]
+    db = MySQLdb.connect(user=sys.argv[1],
+                         passwd=sys.argv[2],
+                         db=sys.argv[3],
+                         host='localhost',
+                         port=3306)
 
-    db = MySQLdb.connect(host='localhost',
-                         port=3306,
-                         user=username,
-                         passwd=password,
-                         db=db_name)
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states
-            WHERE name LIKE BINARY '{}'
-            ORDER BY id ASC".format(state_name))
 
-    states = cursor.fetchall()
-    for state in states:
-        print(state)
+    sql = """ SELECT * FROM states
+          WHERE name LIKE BINARY '{}'
+          ORDER BY id ASC """.format(sys.argv[4])
+
+    cursor.execute(sql)
+
+    data = cursor.fetchall()
+
+    for row in data:
+        print(row)
+
+    cursor.close()
+    db.close()
