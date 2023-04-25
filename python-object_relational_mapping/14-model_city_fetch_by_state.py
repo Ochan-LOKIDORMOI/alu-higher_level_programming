@@ -1,10 +1,7 @@
 #!/usr/bin/python3
 """
-    This is a Script that prints all City objects from the database hbtn_0e_14_usa sorted
-by cities.id.
-Usage: ./14-model_city_fetch_by_state.py <mysql_username>
-                                          <mysql_password>
-                                          <database_name>
+    This is a Script that prints all City objects
+    from the database hbtn_0e_14_usa sorted by cities.id
 """
 
 import sys
