@@ -17,8 +17,9 @@ if __name__ == '__main__':
                          user=username,
                          passwd=password,
                          db=db_name)
+    
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+    cursor.execute("SELECT name FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
     states = cursor.fetchall()
     for state in states:
-        print(state)
+        print('"{0}", '.format(state[0]), end='')
