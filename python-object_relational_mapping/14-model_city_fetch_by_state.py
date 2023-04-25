@@ -12,31 +12,23 @@ from model_city import City
 
 
 if __name__ == '__main__':
-    # Check command line arguments
-    if len(sys.argv) != 4:
-        print('Usage: ./14-model_city_fetch_by_state.py <mysql_username> \
-                                                      <mysql_password> \
-                                                      <database_name>')
-        sys.exit(1)
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
+                           sys.argv[1], sys.argv[2], sys.argv[3]),
+                           pool_pre_ping=True)
 
-    # Create the connection string to the database
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
-    engine = create_engine(f'mysql+mysqldb://{username}:{password}@localhost:3306/{database}')
-
-    # Create a configured "Session" class
     Session = sessionmaker(bind=engine)
+    Base.metadata.create_all(engine)
 
-    # Create a Session instance
+    # create a session
     session = Session()
 
-    # Query all cities and their respective states and sort them by city id
-    cities = session.query(City, State.name)\
-                    .filter(City.state_id == State.id)\
-                    .order_by(City.id)\
-                    .all()
+    # extract all cities in a state
+    cities = session.query(State, City) \
+                    .filter(State.id == City.state_id)
 
-    # Print the result in the required format
-    for city, state_name in cities:
-        print(f'{state_name}: ({city.id}) {city.name}')
+    # print all states
+
+    for ci in cities:
+        print("{}: ({}) {}".format(ci.State.name, ci.City.id, ci.City.name))
+
+    session.close()
