@@ -1,25 +1,32 @@
 #!/usr/bin/python3
+
 """
-    This is a script that lists all states with a name starting with N (upper N)
-    from the database hbtn_0e_0_usa
+    This is a  script that lists all states from the database hbtn_0e_0_usa
+    starting with capital letter N
 """
 
-import MySQLdb
+
 import sys
+import MySQLdb
+
 
 if __name__ == '__main__':
-    username = sys.argv[1]
-    password = sys.argv[2]
-    db_name = sys.argv[3]
+    db = MySQLdb.connect(user=sys.argv[1],
+                         passwd=sys.argv[2],
+                         db=sys.argv[3],
+                         host='localhost',
+                         port=3306)
 
-    db = MySQLdb.connect(host='localhost',
-                         port=3306,
-                         user=username,
-                         passwd=password,
-                         db=db_name)
-    
     cursor = db.cursor()
-    cursor.execute("SELECT name FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
-    states = cursor.fetchall()
-    for state in states:
-        print('"{0}", '.format(state[0]), end='')
+
+    cursor.execute("SELECT * FROM states\
+                    WHERE name LIKE BINARY 'N%'\
+                    ORDER BY id ASC")
+
+    data = cursor.fetchall()
+
+    for row in data:
+        print(row)
+
+    cursor.close()
+    db.close()
