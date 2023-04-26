@@ -25,12 +25,10 @@ Now use it:
 
 
 	>>> lazy_matrix_mul(9, [[1, 2], [3, 4]])
-	array([[ 9, 18],
-	       [27, 36]])
+	array([[ 9, 18], [27, 36]])
 
 	>>> lazy_matrix_mul([[1, 2], [3, 4]], 9)
-	array([[ 9, 18],
-	       [27, 36]])
+	array([[ 9, 18], [27, 36]])
 
 	>>> lazy_matrix_mul(9, 9)
 	81
