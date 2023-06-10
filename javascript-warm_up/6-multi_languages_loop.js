@@ -2,6 +2,4 @@
 
 const lines = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
 
-lines.forEach((line) => {
-  console.log(line);
-});
+for (const line of lines.reverse()) console.log(line);
