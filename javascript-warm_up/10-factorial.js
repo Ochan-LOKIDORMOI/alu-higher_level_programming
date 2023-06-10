@@ -12,4 +12,8 @@ function factorial(n) {
   return n * factorial(n - 1);
 }
 
-const argument = process
+const argument = process.argv[2];
+const num = parseInt(argument);
+
+const result = factorial(num);
+console.log(result);
