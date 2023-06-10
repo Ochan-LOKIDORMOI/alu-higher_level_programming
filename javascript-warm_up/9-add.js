@@ -2,8 +2,8 @@
 
 const { argv } = process;
 
-function add (a,b) {
- console.log(Number(a) + Number(b));
+function add (a, b) {
+  console.log(Number(a) + Number(b));
 }
 
-add (arg[2], argv[3]);
+add(argv[2], argv[3]);
