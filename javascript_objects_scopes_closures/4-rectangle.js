@@ -11,21 +11,21 @@ class Rectangle {
 
   print() {
     if (!this.width || !this.height) {
-      console.log("Empty rectangle");
+      console.log('Empty rectangle');
       return;
     }
 
-    const row = "X".repeat(this.width);
+    const row = 'X'.repeat(this.width);
     for (let i = 0; i < this.height; i++) {
       console.log(row);
     }
   }
 
-  rotate() {
+  rotate () {
     [this.width, this.height] = [this.height, this.width];
   }
 
-  double() {
+  double () {
     this.width *= 2;
     this.height *= 2;
   }
