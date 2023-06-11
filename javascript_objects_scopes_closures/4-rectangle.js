@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 class Rectangle {
-  constructor(w, h) {
+  constructor (w, h) {
     if (w <= 0 || !Number.isInteger(w) || h <= 0 || !Number.isInteger(h)) {
       return {};
     }
@@ -9,7 +9,7 @@ class Rectangle {
     this.height = h;
   }
 
-  print() {
+  print () {
     if (!this.width || !this.height) {
       console.log('Empty rectangle');
       return;
